@@ -1,0 +1,165 @@
+:root {
+    --clr-primary-purple-50: hsl(260, 100%, 95%);
+    --clr-primary-purple-300: hsl(264, 82%, 80%);
+    --clr-primary-purple-500: hsl(263, 55%, 52%);
+
+    --clr-neutral-white: hsl(0, 0%, 100%);
+    --clr-neutral-grey-100: hsl(214, 17%, 92%);
+    --clr-neutral-grey-200: hsl(0, 0%, 81%);
+    --clr-neutral-grey-400: hsl(224, 10%, 45%);
+    --clr-neutral-grey-500: hsl(217, 19%, 35%);
+    --clr-neutral-dark-blue: hsl(219, 29%, 14%);
+    --clr-neutral-black: hsl(0, 0%, 7%);
+
+    --ff-primary: 'Barlow Semi Condensed', sans-serif;
+    --fs-body: 0.81rem;
+    --fs-heading: 1.25rem;
+    --fs-class-name: 0.87rem;
+    --fs-class-verified: 0.75rem;
+
+    --fw-500: 500;
+    --fw-600: 600;
+
+    --space-100: 0.5rem;
+    --space-200: 1rem;
+    --space-300: 1.5rem;
+    --space-400: 2rem;
+
+    --radius: 0.5rem;
+    --shadow: 0 10px 20px rgba(0,0,0,0.1);  
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    background-color: var(--clr-neutral-grey-100);
+    color: var(--clr-neutral-dark-blue);
+    line-height: 1.6;
+}
+
+.cards {
+    display: grid;
+    gap: var(--space-400);
+    padding: var(--space-400); 
+    max-width: 70rem;          
+    margin-inline: auto;       
+    
+}
+.card {
+    background-color: var(--clr-neutral-white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: var(--space-400);
+    margin: 0; 
+}
+
+.quotes-icon {
+    display: none;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    gap: var(--space-200);
+    margin-bottom: var(--space-300);
+}
+
+img.profile-picture {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.card h2 {
+    font-size: var(--fs-heading);
+    font-weight: var(--fw-600);
+    margin-bottom: var(--space-200);
+}
+
+.card p {
+    font-size: var(--fs-body);
+}
+
+.name {
+    font-size: var(--fs-class-name);
+    font-weight: var(--fw-500);
+}
+
+.verified {
+    font-size: var(--fs-class-verified);
+}
+
+.daniel {
+    background-color: var(--clr-primary-purple-500);
+    color: var(--clr-neutral-white);
+}
+
+.jonathan {
+    background-color: var(--clr-neutral-grey-500);
+    color: var(--clr-neutral-white);
+}
+
+.patrick {
+    background-color: var(--clr-neutral-dark-blue);
+    color: var(--clr-neutral-white);
+}
+
+.jeanette, .kira {
+    color: var(--clr-neutral-grey-400);
+}
+
+@media (min-width: 48rem) {
+
+  main {
+      grid-template-columns: repeat(4, 1fr);
+  }
+
+    .card {
+        position: relative;
+        z-index: 1;
+    }
+
+    .quotes-icon {
+        display: block;
+        position: absolute;
+        top: var(--space-100);
+        right: var(--space-200);
+        z-index: 0;
+    }
+
+    .card h2,
+.card p,
+.card .profile-info {
+    position: relative;
+    z-index: 2;
+}
+ .daniel {
+    grid-column: span 2;
+  }
+
+  .jonathan {
+    grid-column: span 1;
+  }
+
+  .kira {
+    grid-column: 4;
+    grid-row: 1 / span 2;
+  }
+
+  .jeanette {
+    grid-column: span 1;
+  }
+
+  .patrick {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+}
